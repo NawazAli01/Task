@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Task {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+{% else %}
+  <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+  <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+{% endif %}
+{% endblock %}
